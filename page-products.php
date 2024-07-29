@@ -13,71 +13,29 @@
 <!-- end page-title-wrapper -->
 
 
-<!-- start of latest-projects-s2 -->
-<section class="latest-projects-s2 section-padding">
-  <div class="container">
-    <div class="row latest-projects-s2-grids">
-      <div class="col col-lg-6 left-col">
-        <div class="grid">
-          <div class="img-holder">
-            <img src="<?= get_bloginfo('template_directory'); ?>/assets/images/sabzawari/product_page/prod_bg_1.jpg" alt class="img img-responsive">
-          </div>
-          <div class="details">
-            <h3><a href="#">Petroleum Products</a></h3>
-            <!-- <p class="location"><i class="fa fa-map-marker"></i> Rotterdam, Netherlands</p> -->
-          </div>
-        </div>
-      </div>
-      <div class="col col-lg-6 right-col">
-        <div class="grid">
-          <div class="inner">
+
+<!-- start of latest-porjects-s3 -->
+<section class="latest-porjects-s3 section-padding">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="projects-s3-grids project-s3-slider">
+        <?php $loop = new WP_Query(array('post_type' => 'product', 'posts_per_page' => -1)); ?>
+        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+          <div class="grid">
             <div class="img-holder">
-              <img src="<?= get_bloginfo('template_directory'); ?>/assets/images/sabzawari/product_page/prod_sm_1.jpg" alt class="img img-responsive">
+              <img src="<?= the_post_thumbnail_url( ) ?>" alt>
             </div>
             <div class="details">
-              <h3><a href="#">High quality Petrol-92,93</a></h3>
-              <!-- <p class="location"><i class="fa fa-map-marker"></i> Rotterdam, Netherlands</p> -->
+              <h3><a href="<?= the_permalink( ) ?>"><?= the_title() ?></a></h3>
+              <p><?= the_excerpt(  ) ?></p>
             </div>
           </div>
-        </div>
-        <div class="grid">
-          <div class="inner">
-            <div class="img-holder">
-              <img src="<?= get_bloginfo('template_directory'); ?>/assets/images/sabzawari/product_page/prod_sm_2.jpg" alt class="img img-responsive">
-            </div>
-            <div class="details">
-              <h3><a href="#">Natural Gas</a></h3>
-              <!-- <p class="location"><i class="fa fa-map-marker"></i> Rotterdam, Netherlands</p> -->
-            </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="inner">
-            <div class="img-holder">
-              <img src="<?= get_bloginfo('template_directory'); ?>/assets/images/sabzawari/product_page/prod_sm_3.jpg" alt class="img img-responsive">
-            </div>
-            <div class="details">
-              <h3><a href="#">Urea Fertilizer (Grade B)</a></h3>
-              <!-- <p class="location"><i class="fa fa-map-marker"></i> Rotterdam, Netherlands</p> -->
-            </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="inner">
-            <div class="img-holder">
-              <img src="<?= get_bloginfo('template_directory'); ?>/assets/images/sabzawari/product_page/prod_sm_4.jpg" alt class="img img-responsive">
-            </div>
-            <div class="details">
-              <h3><a href="#">Polypropylene (D-382 & D-30)
-                </a></h3>
-              <!-- <p class="location"><i class="fa fa-map-marker"></i> Rotterdam, Netherlands</p> -->
-            </div>
-          </div>
-        </div>
+        <?php endwhile; ?>
       </div>
     </div> <!-- end row -->
-  </div> <!-- end container -->
+  </div>
 </section>
-<!-- end of latest-projects-s2 -->
+<!-- end of latest-porjects-s3 -->
+
 
 <?php get_footer() ?>

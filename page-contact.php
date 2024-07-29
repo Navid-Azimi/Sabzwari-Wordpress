@@ -7,7 +7,7 @@
 <!-- start page-title-wrapper -->
 <div class="page-title">
   <div class="container">
-    <h1>Contact</h1>
+    <h1><?= the_title(  ) ?></h1>
   </div>
 </div>
 <!-- end page-title-wrapper -->
@@ -26,25 +26,7 @@
             <li><i class="fa fa-phone"></i><?= the_field('phone_number') ?></li>
           </ul>
           <h4>Send Email</h4>
-          <form class="form contact-validation-active" id="contact-form">
-            <div>
-              <input type="text" name="name" class="form-control" placeholder="Full Name">
-            </div>
-            <div>
-              <input type="email" name="email" class="form-control" placeholder="Email">
-            </div>
-            <div>
-              <textarea name="note" class="form-control" placeholder="Message"></textarea>
-            </div>
-            <div class="submit">
-              <button type="submit">Send</button>
-              <span id="loader"><img src="<?= get_bloginfo('template_directory'); ?>/assets/images/contact-ajax-loader.gif" alt="Loader"></span>
-            </div>
-            <div class="error-handling-messages">
-              <div id="success">Thank you</div>
-              <div id="error"> Error occurred while sending email. Please try again later. </div>
-            </div>
-          </form>
+          <?= do_shortcode('[contact-form-7 id="8a2b059" title="Contact form 1"]' ) ?>
         </div>
       </div>
     </div> <!-- end row -->

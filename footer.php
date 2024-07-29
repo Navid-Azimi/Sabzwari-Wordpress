@@ -1,5 +1,5 @@
  <!-- start footer-->
- <footer class="site-footer">
+ <footer class="site-footer" style="margin-bottom: 40px;">
    <div class="container">
      <div class="row">
        <div class="col col-lg-4 col-md-4 col-xs-6">
@@ -74,6 +74,10 @@
      </div> <!-- end container -->
  </footer>
  <!-- end footer-->
+
+ <div class="stick_bottom text-center">
+   <p>Copyright © 2024 <?= (date('Y') != '2024') ? ' - ' . date('Y') : ''  ?>. <a href="https://cyborgtech.co/" target="_blank">Cyborg Tech Creative Agency</a>, All Rights Reserved. </p>
+ </div>
 
 
  <div class="client-login-area">
